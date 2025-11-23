@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday — Celebration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+
+    <main class="stage" id="stage">
+      <!-- Arka Plan Katmanları -->
+      <div class="bg-layers">
+        <div class="bg-layer layer--far"></div>
+        <div class="bg-layer layer--mid"></div>
+        <div class="bg-layer layer--near"></div>
+      </div>
+
+      <!-- PASTA SAHNESİ -->
+      <section class="scene">
+        <div class="cake-plate">
+          <div class="cake" id="cake">
+            <div class="cake-layer cake--top">
+              <div class="sprinkles"></div>
+            </div>
+            <div class="cake-layer cake--middle">
+              <div class="cream"></div>
+            </div>
+            <div class="cake-layer cake--base"></div>
+
+            <div class="candles" id="candles">
+              <!-- Mumlar JS tarafından oluşturulacak -->
+            </div>
+
+            <div class="cake-shadow"></div>
+          </div>
+
+          <div class="message-card">
+            <h1 id="message">Happy Birthday, Cudi! 🎉</h1>
+            <p class="sub">Touch the cake for a burst and song! 🎈</p>
+          </div>
+        </div>
+
+        <audio id="birthdaySong" src="asserts/happy_birthday.mp3"></audio>
+
+
+        <!-- BALONLAR -->
+        <div class="balloon-hub" id="balloonHub"></div>
+
+        <!-- SÜREKLİ KONFETİ -->
+        <div class="rain-confetti" id="rainConfetti"></div>
+
+        <!-- TIKLAMA KONFETİ -->
+        <div class="confetti-hub" id="confettiHub"></div>
+
+      </section>
+    </main>
+
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
