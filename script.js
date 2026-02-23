@@ -130,8 +130,41 @@ function burst(x, y){
 }
 
 /* ::::::::::::: EVENTS ::::::::::::: */
-cake.addEventListener("click", (e) => {
-  burst(e.clientX, e.clientY);
+cake.addEventListener("click", () => {
+
+  const rect = cake.getBoundingClientRect();
+
+  // 🎂 Pasta köşeleri
+  const leftBottomX = rect.left + 30;
+  const leftBottomY = rect.bottom - 30;
+
+  const rightTopX = rect.right - 30;
+  const rightTopY = rect.top + 30;
+
+  // 🌍 Sayfa köşeleri
+  const pageLeftTopX = 50;
+  const pageLeftTopY = 50;
+
+  const pageRightBottomX = window.innerWidth - 50;
+  const pageRightBottomY = window.innerHeight - 50;
+
+  const burstCount = Math.floor(Math.random() * 2) + 3; // 3–4 patlama
+
+  for(let i = 0; i < burstCount; i++){
+
+    // Pasta sol alt
+    burst(leftBottomX + rand(-20,20), leftBottomY + rand(-20,20));
+
+    // Pasta sağ üst
+    burst(rightTopX + rand(-20,20), rightTopY + rand(-20,20));
+
+    // Sayfa sol üst
+    burst(pageLeftTopX + rand(-20,20), pageLeftTopY + rand(-20,20));
+
+    // Sayfa sağ alt
+    burst(pageRightBottomX + rand(-20,20), pageRightBottomY + rand(-20,20));
+  }
+
   song.currentTime = 0;
   song.volume = 0.5;
   song.play();
